@@ -50,6 +50,10 @@ namespace facter { namespace facts {
          */
         constexpr static char const* mandrake = "Mandrake";
         /**
+         * The Exherbo operating system.
+         */
+        constexpr static char const* exherbo = "Exherbo";
+        /**
          * The Windows family of operating systems.
          */
         constexpr static char const* windows = "windows";

@@ -550,6 +550,7 @@ msgstr ""
 
 #. debug
 #: lib/src/facts/external/execution_resolver.cc
+#: lib/src/facts/external/windows/powershell_resolver.cc
 msgid "Could not parse executable fact output as YAML or JSON ({1})"
 msgstr ""
 

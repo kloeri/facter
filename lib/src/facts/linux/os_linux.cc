@@ -151,6 +151,7 @@ namespace facter { namespace facts { namespace linux {
             make_tuple(string(release_file::alpine),         string(os::alpine)),
             make_tuple(string(release_file::vmware_esx),     string(os::vmware_esx)),
             make_tuple(string(release_file::slackware),      string(os::slackware)),
+            make_tuple(string(release_file::exherbo),        string(os::exherbo)),
         };
 
         for (auto const& file : files) {
@@ -244,6 +245,7 @@ namespace facter { namespace facts { namespace linux {
             { string(os::mandrake),                 string(os_family::mandrake) },
             { string(os::mandriva),                 string(os_family::mandrake) },
             { string(os::mageia),                   string(os_family::mandrake) },
+            { string(os::exherbo),                  string(os_family::exherbo) },
         };
         auto const& it = systems.find(name);
         if (it != systems.end()) {
@@ -343,6 +345,9 @@ namespace facter { namespace facts { namespace linux {
             if (re_search(contents, boost::regex(pattern), &major, &minor)) {
                 value = major + "." + minor;
             }
+        }
+        if (value.empty() && name == os::exherbo) {
+            value = "0";
         }
 
         // Read version files of particular operating systems
